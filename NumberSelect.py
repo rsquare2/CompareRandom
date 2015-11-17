@@ -7,22 +7,30 @@
 
 import random
 
-def compare(rounds):
-    match = 0
+class Compare:
+
+    def __init__(self,rounds):
+        self.rounds = rounds
+        self.match = 0
 
 
-    for round in range(rounds):
-        for counter in range(1,11):
-            pick = random.randint(1,10)
-            if counter == pick:
-                match += 1
+    def selectRandom(self):
+        for round in range(self.rounds):
+            for counter in range(1,11):
+                pick = random.randint(1,10)
+                if counter == pick:
+                    self.match += 1
                 # print("****Match: ",counter, pick)
 
             # else:
                 # print("No Match: ", counter, pick)
 
-    print("Total Matches: ",match)
-    print("Rounds: ", rounds)
-    print("Avg Matches Per Round: ", (match/rounds))
+        print("Total Matches: ",self.match)
+        print("Rounds: ", self.rounds)
+        print("Avg Matches Per Round: ", (self.match/self.rounds))
 
-compare(20000)
+def main():
+    a = Compare(10000)
+    b = a.selectRandom()
+
+if __name__ == '__main__': main()
