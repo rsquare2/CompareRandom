@@ -20,10 +20,6 @@ class Compare:
                 pick = random.randint(1,10)
                 if counter == pick:
                     self.match += 1
-                # print("****Match: ",counter, pick)
-
-            # else:
-                # print("No Match: ", counter, pick)
 
         print("Total Matches: ",self.match)
         print("Rounds: ", self.rounds)
