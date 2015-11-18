@@ -13,17 +13,12 @@ class Compare:
         self.rounds = rounds
         self.match = 0
 
-
     def selectRandom(self):
         for round in range(self.rounds):
             for counter in range(1,11):
                 pick = random.randint(1,10)
                 if counter == pick:
                     self.match += 1
-                # print("****Match: ",counter, pick)
-
-            # else:
-                # print("No Match: ", counter, pick)
 
         print("Total Matches: ",self.match)
         print("Rounds: ", self.rounds)
