@@ -12,21 +12,27 @@ class Compare:
     def __init__(self,rounds):
         self.rounds = rounds
         self.match = 0
+        self.maxMatchesSoFar = 0
+        
 
 
     def selectRandom(self):
         for round in range(self.rounds):
+            self.maxMatches = 0
             for counter in range(1,11):
                 pick = random.randint(1,10)
                 if counter == pick:
                     self.match += 1
+                    self.maxMatches +=1
+                if self.maxMatches > self.maxMatchesSoFar:
+                    self.maxMatchesSoFar = self.maxMatches
 
         print("Total Matches: ",self.match)
         print("Rounds: ", self.rounds)
         print("Avg Matches Per Round: ", (self.match/self.rounds))
-
+        print("Max Matches in a Round: ", self.maxMatchesSoFar)
 def main():
-    a = Compare(10000)
+    a = Compare(100000)
     b = a.selectRandom()
 
 if __name__ == '__main__': main()
